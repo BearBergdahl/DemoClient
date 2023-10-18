@@ -11,7 +11,7 @@ namespace DemoClient
     {
         static void Main(string[] args)
         {
-            RestSharpService service = new RestSharpService();
+            ClientService service = new ClientService();
             int selectedInt = new();
             bool breakNow = default;
             Dictionary<int, string> selectedTranslator = new Dictionary<int, string> 
@@ -51,11 +51,8 @@ namespace DemoClient
             Console.WriteLine("Press any key");
             Console.ReadKey();
         }
-
-
     }
-
-    
+        
     public class ResponseClass 
     {
         public SuccessResponse Success {  get; set; }
@@ -65,6 +62,7 @@ namespace DemoClient
         {
             int Total { get; set; }
         }
+
         public class ContentResponse
         {
             public string Translated { get; set; }

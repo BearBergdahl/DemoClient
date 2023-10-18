@@ -8,14 +8,12 @@ using static System.Net.WebRequestMethods;
 
 namespace DemoClient
 {
-    public class RestSharpService
-    {
-        
+    public class ClientService
+    {        
         public RestResponse GetTranslatedText(string text, string translator)
         {
             RestClient client = CreateClient($"https://api.funtranslations.com/translate/{translator}.json");
             return MakeRestCall(client, text);
-
         }
         
         private RestResponse MakeRestCall(RestClient restClient, string inputText)
@@ -34,7 +32,6 @@ namespace DemoClient
             var options = new RestClientOptions(url);
             var client = new RestClient(options);
             return client;
-        }  
-        
+        }          
     }
 }
