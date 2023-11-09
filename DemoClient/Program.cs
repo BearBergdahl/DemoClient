@@ -13,25 +13,25 @@ namespace DemoClient
         {
             ClientService service = new ClientService();
             int selectedInt = new();
-            bool breakNow = default;
+            bool runOn = true;
             Dictionary<int, string> selectedTranslator = new Dictionary<int, string> 
             {
-                {1, "pirate" },
+                {1, "sindarin" },
                 {2, "yoda" },
                 {3, "valyrian" }
             };
 
             Console.WriteLine("Hello, World! Let's hear it from our funtranslator.");
-            while (!breakNow)
+            while (runOn)
             {
-                Console.WriteLine("Press 1. for Pirate \nPress 2. for Yoda \nPress 3. for Valyrian");
+                Console.WriteLine("Press 1. for Sindarin \nPress 2. for Yoda \nPress 3. for Valyrian");
                 var select = Console.ReadKey();
                 if (char.IsDigit(select.KeyChar))
                 {
                     selectedInt = int.Parse(select.KeyChar.ToString()); // use Parse if it's a Digit
                     if (selectedInt > 0 && selectedInt < 4)
                     {
-                        breakNow = true;
+                        runOn = false;
                     }
                 }
                 else
@@ -52,7 +52,7 @@ namespace DemoClient
             Console.ReadKey();
         }
     }
-        
+   
     public class ResponseClass 
     {
         public SuccessResponse Success {  get; set; }

@@ -9,7 +9,14 @@ using static System.Net.WebRequestMethods;
 namespace DemoClient
 {
     public class ClientService
-    {        
+    {   
+        /// <summary>
+        /// Här skriver vi en sammanfattning
+        ///
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="translator"></param>
+        /// <returns>RestResponse</returns>
         public RestResponse GetTranslatedText(string text, string translator)
         {
             RestClient client = CreateClient($"https://api.funtranslations.com/translate/{translator}.json");
